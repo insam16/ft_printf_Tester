@@ -6,7 +6,7 @@
 /*   By: yuna <yuna@student.42gyeongsan.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:16:41 by yuna              #+#    #+#             */
-/*   Updated: 2024/04/17 12:18:03 by yuna             ###   ########.fr       */
+/*   Updated: 2024/04/17 18:36:42 by yuna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,19 @@
 
 # include <stdio.h>
 # include <fcntl.h>
-# include "../ft_printf.h"
+# include "../ft_printf/ft_printf.h"
+# include "get_next_line.h"
 
 # define ALL 0
 # define MANDATORY 1
 # define BONUS 2
 # define TEST 3
 
-# define PRT printf("["); ret1 = printf
-# define ENDPRT printf("] %d\n", ret1)
+# define PRT printf("["); ret = printf
+# define ENDPRT printf("] %d\n", ret)
 
-# define FRT ft_printf("["); ret2 = ft_printf
-# define ENDFRT ft_printf("] %d\n", ret2)
+# define FRT ft_printf("["); ret = ft_printf
+# define ENDFRT ft_printf("] %d\n", ret)
 
 # define STR "%c", 'a'
 # define FUNC(X) PRT(X); ENDPRT
@@ -46,7 +47,7 @@
 # define STR_B_3 "%3s", "ya-hoo"
 
 // %p
-# define PTR_M_1 "%p", &ret1
+# define PTR_M_1 "%p", &ret
 # define PTR_M_2 "%p", (void *)-1
 
 // %d
@@ -88,5 +89,7 @@
 # define UPPER_X_M_1 "%X", 0
 # define UPPER_X_M_2 "%X", -1
 # define UPPER_X_M_3 "%X", -42
+
+int	print_all(int mode);
 
 #endif
