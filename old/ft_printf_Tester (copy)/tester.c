@@ -6,14 +6,14 @@
 /*   By: yuna <yuna@student.42gyeongsan.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:16:37 by yuna              #+#    #+#             */
-/*   Updated: 2024/04/18 13:14:13 by yuna             ###   ########.fr       */
+/*   Updated: 2024/04/18 09:24:23 by yuna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tester.h"
 
 int	tester_strcmp(unsigned char *s1, unsigned char *s2);
-
+//https://medium.com/@selvarajk/adding-color-to-your-output-from-c-58f1a4dc4e75
 int	main(void)
 {
 	int		mode = ALL;
@@ -24,18 +24,8 @@ int	main(void)
 
 	print_all(mode);
 
-// # undef FILENAME
-// # undef FUNC
-// # undef PRINT
-
-// # define FILENAME "result_ft_printf"
-// # define FUNC(X) FRT(X); ENDFRT
-// # define PRINT ft_printf
-
-	//print_all(mode);
-
-	fd_prt = open("result_printf", O_RDWR);
-	fd_frt = open("result_ft_printf", O_RDWR);
+	fd_prt = open("fd_prt", O_RDONLY);
+	fd_frt = open("fd_frt", O_RDONLY);
 	while (1)
 	{
 		line1 = get_next_line(fd_prt);
@@ -91,7 +81,7 @@ int	main(void)
 	close(fd_prt);
 	close(fd_frt);
 	// unlink("fd_prt");
-	// unlink("fd_frt");
+	unlink("fd_frt");
 	return (0);
 }
 

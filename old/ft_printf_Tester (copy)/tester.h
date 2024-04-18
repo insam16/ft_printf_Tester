@@ -6,7 +6,7 @@
 /*   By: yuna <yuna@student.42gyeongsan.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:16:41 by yuna              #+#    #+#             */
-/*   Updated: 2024/04/18 13:24:03 by yuna             ###   ########.fr       */
+/*   Updated: 2024/04/18 09:31:37 by yuna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <limits.h>
-# include "../ft_printf_working/ft_printf.h"
+# include "../ft_printf/ft_printf.h"
 # include "get_next_line.h"
 
 # define ALL 0
@@ -30,13 +30,9 @@
 # define FRT ft_printf("["); ret = ft_printf
 # define ENDFRT ft_printf("] %d\n", ret)
 
-// # define FILENAME "result_printf"
-// # define FUNC(X) PRT(X); ENDPRT
-// # define PRINT printf
-
-# define FILENAME "result_ft_printf"
+# define STR "%c", 'a'
+//# define FUNC(X) PRT(X); ENDPRT
 # define FUNC(X) FRT(X); ENDFRT
-# define PRINT ft_printf
 
 // %c
 # define CHR_M_1 "%c", 'a'

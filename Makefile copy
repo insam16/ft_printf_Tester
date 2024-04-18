@@ -4,15 +4,16 @@ CFLAGSSIMPLE = -Wall -g
 NORM = norminette
 NAME = ft_printf_tester
 DIR = ft_printf_Tester
-SUBDIR = ../ft_printf_working
+SUBDIR = ../ft_printf
 PRINTF = $(SUBDIR)/libftprintf.a
+# HPRT = header_prt.h
+# HFRT = header_frt.h
 
 SRC_PRINT = print_all.c
 
 SRCS = \
 	tester.c\
 	get_next_line.c\
-	print_all.c
 
 OBJS = $(SRCS:.c=.o)\
 
@@ -23,13 +24,18 @@ all: $(NAME)
 # cd $(SUBDIR); norminette *.c *.h
 $(NAME): $(OBJS) $(PRT)
 	cd $(SUBDIR); make re
-	cd ../$(DIR); $(CC) $(CFLAGSSIMPLE) $(OBJS) $(PRINTF) -o $(NAME)
+	$(CC) $(CFLAGSSIMPLE) $(OBJS) $(PRT) $(PRINTF) -o $(NAME)
+# ./$(NAME)
+# $(CC) $(CFLAGSSIMPLE) $(OBJS) $(FRT) $(PRINTF) -o $(NAME)
 
-$(PRT): $(SRC_PRINT)
-	$(CC) $(CFLAGS) -c $(SRC_PRINT)
+$(PRT): $(HPRT) $(SRC_PRINT)
+	$(CC) $(CFLAGS) -c $(HPRT) $(SRC_PRINT)
 
-$(FRT): $(SRC_PRINT)
-	$(CC) $(CFLAGS) -c $(SRC_PRINT)
+$(FRT): $(HFRT) $(SRC_PRINT)
+	$(CC) $(CFLAGS) -c $(HFRT) $(SRC_PRINT)
+# ./$(NAME)
+# $(CC) $(CFLAGS) $(HFRT) $(OBJS) $(PRINTF) -o $(NAME)
+# $()
 
 # m: $(OBJS)
 # 	$(CC) $(CFLAGS) $(OBJS) $(PRINTF) -o $(NAME)
